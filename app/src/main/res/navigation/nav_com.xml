@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_com"
+    app:startDestination="@id/splashScreen">
+
+    <fragment
+        android:id="@+id/homeRestoran"
+        android:name="com.restoran.listmakanan.view.fragment.HomeRestoran"
+        android:label="fragment_home_restoran"
+        tools:layout="@layout/fragment_home_restoran" >
+        <action
+            android:id="@+id/action_homeRestoran_to_loginRestoran"
+            app:destination="@id/loginRestoran" />
+        <action
+            android:id="@+id/action_homeRestoran_to_favoriteFragment"
+            app:destination="@id/favoriteRestoran" />
+        <action
+            android:id="@+id/action_homeRestoran_to_detailRestoran"
+            app:destination="@id/detailRestoran" />
+        <action
+            android:id="@+id/action_homeRestoran_to_profileFragment"
+            app:destination="@id/profileRestoran" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginRestoran"
+        android:name="com.restoran.listmakanan.view.fragment.LoginRestoran"
+        android:label="fragment_login_restoran"
+        tools:layout="@layout/fragment_login_restoran" >
+        <action
+            android:id="@+id/action_loginRestoran_to_registerRestoran"
+            app:destination="@id/registerRestoran" />
+        <action
+            android:id="@+id/action_loginRestoran_to_homeRestoran"
+            app:destination="@id/homeRestoran" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerRestoran"
+        android:name="com.restoran.listmakanan.view.fragment.RegisterRestoran"
+        android:label="fragment_register_restoran"
+        tools:layout="@layout/fragment_register_restoran" >
+        <action
+            android:id="@+id/action_registerRestoran_to_loginRestoran"
+            app:destination="@id/loginRestoran" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashScreen"
+        android:name="com.restoran.listmakanan.view.fragment.SplashScreen"
+        android:label="fragment_splash_screen"
+        tools:layout="@layout/fragment_splash_screen" >
+        <action
+            android:id="@+id/action_splashScreen_to_homeRestoran"
+            app:destination="@id/homeRestoran" />
+        <action
+            android:id="@+id/action_splashScreen_to_loginRestoran"
+            app:destination="@id/loginRestoran" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteRestoran"
+        android:name="com.restoran.listmakanan.view.fragment.FavoriteRestoran"
+        android:label="fragment_favorite"
+        tools:layout="@layout/fragment_favorite" >
+        <action
+            android:id="@+id/action_favoriteFragment_to_homeRestoran"
+            app:destination="@id/homeRestoran" />
+        <action
+            android:id="@+id/action_favoriteRestoran_to_detailRestoran"
+            app:destination="@id/detailRestoran" />
+        <action
+            android:id="@+id/action_favoriteRestoran_to_profileFragment"
+            app:destination="@id/profileRestoran" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailRestoran"
+        android:name="com.restoran.listmakanan.view.fragment.DetailRestoran"
+        android:label="DetailRestoran" >
+        <action
+            android:id="@+id/action_detailRestoran_to_homeRestoran"
+            app:destination="@id/homeRestoran" />
+        <action
+            android:id="@+id/action_detailRestoran_to_favoriteRestoran"
+            app:destination="@id/favoriteRestoran" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileRestoran"
+        android:name="com.restoran.listmakanan.view.fragment.ProfileRestoran"
+        android:label="ProfileRestoran" >
+        <action
+            android:id="@+id/action_profileRestoran_to_loginRestoran"
+            app:destination="@id/loginRestoran" />
+        <action
+            android:id="@+id/action_profileRestoran_to_homeRestoran"
+            app:destination="@id/homeRestoran" />
+    </fragment>
+</navigation>
