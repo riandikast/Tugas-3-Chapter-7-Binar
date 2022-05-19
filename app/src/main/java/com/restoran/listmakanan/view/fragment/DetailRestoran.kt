@@ -77,6 +77,7 @@ class DetailRestoran : Fragment() {
         }
 
         if (getUpdateMenu!=null){
+            id = getUpdateMenu.id.toString()
             view.text1.text = getUpdateMenu.namaMakanan
             view.text2.text = getUpdateMenu.harga
             view.text4.text = getUpdateMenu.desc
