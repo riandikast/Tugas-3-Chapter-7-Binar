@@ -14,6 +14,7 @@ import com.listfilm.andika.model.update.UpdateResponse
 import com.restoran.listmakanan.R
 import com.restoran.listmakanan.model.makanan.GetMenuItem
 import com.restoran.listmakanan.model.update.UpdateMenuResponse
+import com.restoran.listmakanan.room.FavoriteMakanan
 import com.restoran.listmakanan.viewmodel.ViewModelMakanan
 import com.restoran.listmakanan.viewmodel.ViewModelUser
 import kotlinx.android.synthetic.main.fragment_detail_restoran.view.*
@@ -37,6 +38,17 @@ class EditMenuRestoran : Fragment() {
         val view = inflater.inflate(R.layout.fragment_edit_menu_restoran, container, false)
         val getmakanan = arguments?.getParcelable<GetMenuItem>("detailfilm")
         val getmakananupdate = arguments?.getParcelable<UpdateMenuResponse>("updatemenu")
+        val getmakananfromfav = arguments?.getParcelable<FavoriteMakanan>("detailfilmfromfav")
+
+        if (getmakananfromfav != null && getmakananupdate == null){
+            view.update1w.setText ( getmakananfromfav.namaMakanan)
+            view.update2w.setText ( getmakananfromfav.harga )
+            view.update3w.setText ( getmakananfromfav.gambar )
+            view.update4w.setText ( getmakananfromfav.desc )
+            Glide.with(requireContext()).load(getmakananfromfav.gambar).into(view.ppw)
+            id = getmakananfromfav.id
+
+        }
         if (getmakanan != null && getmakananupdate == null){
             view.update1w.setText ( getmakanan.namaMakanan)
             view.update2w.setText ( getmakanan.harga )

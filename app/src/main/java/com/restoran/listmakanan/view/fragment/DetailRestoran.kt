@@ -109,10 +109,14 @@ class DetailRestoran : Fragment() {
         view.btnfavorite.setOnClickListener {
             toggleButton()
         }
+
         if(BuildConfig.FLAVOR.equals("admin"))
         {
             view.btnedit.setOnClickListener {
                 val bund = Bundle()
+                if (getfilmfromfav !=null && getUpdateMenu ==null){
+                    bund.putParcelable("detailfilmfromfav", getfilmfromfav)
+                }
                 if (getfilm !=null && getUpdateMenu ==null){
                     bund.putParcelable("detailfilm", getfilm)
                 }
@@ -123,10 +127,7 @@ class DetailRestoran : Fragment() {
                 view.findNavController().navigate(R.id.action_detailRestoran_to_editMenuRestoran,bund)
             }
         }
-        else
-        {
 
-        }
 
 
         view.btnbackhome.setOnClickListener {
