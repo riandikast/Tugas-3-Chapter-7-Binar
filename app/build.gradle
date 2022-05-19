@@ -29,9 +29,21 @@ android {
     productFlavors{
         user{
             applicationIdSuffix = ".user"
+            manifestPlaceholders = [
+                    appIcon: "@mipmap/ic_launcher",
+                    appIconRound: "@mipmap/ic_launcher_round",
+
+
+            ]
+            resValue "string", "app_name", "Comefood"
         }
         admin{
             applicationIdSuffix = ".admin"
+            manifestPlaceholders = [
+                    appIcon: "@mipmap/ic_launcher_admin",
+                    appIconRound: "@mipmap/ic_launcher_admin_round"
+            ]
+            resValue "string", "app_name", "Comefood Admin"
 
         }
     }
