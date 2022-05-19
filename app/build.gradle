@@ -23,6 +23,17 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+
+    }
+    flavorDimensions "Default"
+    productFlavors{
+        user{
+            applicationIdSuffix = ".user"
+        }
+        admin{
+            applicationIdSuffix = ".admin"
+
+        }
     }
 
     compileOptions {

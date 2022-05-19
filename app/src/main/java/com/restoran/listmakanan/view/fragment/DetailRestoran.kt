@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.asLiveData
 import androidx.navigation.findNavController
 import com.bumptech.glide.Glide
+import com.restoran.listmakanan.BuildConfig
 import com.restoran.listmakanan.R
 import com.restoran.listmakanan.model.makanan.GetMenuItem
 import com.restoran.listmakanan.model.update.UpdateMenuResponse
@@ -108,17 +109,25 @@ class DetailRestoran : Fragment() {
         view.btnfavorite.setOnClickListener {
             toggleButton()
         }
-        view.btnedit.setOnClickListener {
-            val bund = Bundle()
-            if (getfilm !=null && getUpdateMenu ==null){
-                bund.putParcelable("detailfilm", getfilm)
-            }
-            else if (getUpdateMenu!=null){
-                bund.putParcelable("updatemenu", getUpdateMenu)
-            }
+        if(BuildConfig.FLAVOR.equals("admin"))
+        {
+            view.btnedit.setOnClickListener {
+                val bund = Bundle()
+                if (getfilm !=null && getUpdateMenu ==null){
+                    bund.putParcelable("detailfilm", getfilm)
+                }
+                else if (getUpdateMenu!=null){
+                    bund.putParcelable("updatemenu", getUpdateMenu)
+                }
 
-            view.findNavController().navigate(R.id.action_detailRestoran_to_editMenuRestoran,bund)
+                view.findNavController().navigate(R.id.action_detailRestoran_to_editMenuRestoran,bund)
+            }
         }
+        else
+        {
+
+        }
+
 
         view.btnbackhome.setOnClickListener {
             view.findNavController().navigate(R.id.action_detailRestoran_to_homeRestoran)

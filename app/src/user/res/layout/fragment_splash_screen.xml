@@ -32,14 +32,5 @@
 
     </TextView>
 
-    <TextView
-
-        android:layout_gravity="center_horizontal"
-        android:text="Admin"
-        android:textSize="30sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-    </TextView>
 
 </LinearLayout>
