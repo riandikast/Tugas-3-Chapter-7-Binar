@@ -24,7 +24,7 @@ class AdapterFavorite (var onclick : (FavoriteMakanan)-> Unit) : RecyclerView.Ad
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-//        Glide.with(holder.itemView.context).load(datafav!![position].image).into(holder.itemView.gambarv)
+        Glide.with(holder.itemView.context).load(datafav!![position].gambar).into(holder.itemView.gambarv)
 
         holder.itemView.text1v.text = datafav!![position].namaMakanan
         holder.itemView.text2v.text = datafav!![position].harga

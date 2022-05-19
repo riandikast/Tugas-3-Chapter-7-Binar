@@ -10,10 +10,12 @@ import androidx.lifecycle.asLiveData
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.binar.challengechapterenam.datastore.UserManager
+import com.bumptech.glide.Glide
 import com.restoran.listmakanan.R
 import com.restoran.listmakanan.view.adapter.AdapterHome
 import com.restoran.listmakanan.viewmodel.ViewModelMakanan
 import kotlinx.android.synthetic.main.fragment_home_restoran.view.*
+import kotlinx.android.synthetic.main.fragment_profile.view.*
 
 
 class HomeRestoran : Fragment() {
@@ -28,8 +30,13 @@ class HomeRestoran : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_home_restoran, container, false)
         var homelinear = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
-
-        //New Movie~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        userManager = com.binar.challengechapterenam.datastore.UserManager(requireContext())
+        userManager.userImage.asLiveData().observe(requireActivity()){
+            if (it !="x") {
+                Glide.with(requireContext()).load(it).into(view.profile)
+            }
+        }
+        //New Makanan~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
         adaptermakanan = AdapterHome(){
             val bund = Bundle()

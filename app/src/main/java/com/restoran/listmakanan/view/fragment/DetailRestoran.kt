@@ -7,9 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.asLiveData
+import androidx.navigation.findNavController
 import com.bumptech.glide.Glide
 import com.restoran.listmakanan.R
 import com.restoran.listmakanan.model.makanan.GetMenuItem
+import com.restoran.listmakanan.model.update.UpdateMenuResponse
 import com.restoran.listmakanan.room.FavoriteDB
 import com.restoran.listmakanan.room.FavoriteMakanan
 import kotlinx.android.synthetic.main.fragment_detail_restoran.*
@@ -44,6 +46,7 @@ class DetailRestoran : Fragment() {
         userManager = com.binar.challengechapterenam.datastore.UserManager(requireContext())
         val getfilm = arguments?.getParcelable<GetMenuItem>("detailfilm")
         val getfilmfromfav = arguments?.getParcelable<FavoriteMakanan>("detailfilmfromfav")
+        val getUpdateMenu = arguments?.getParcelable<UpdateMenuResponse>("updatemenu")
         db = FavoriteDB.getInstance(requireActivity())
 
         if (getfilm != null){
@@ -72,6 +75,13 @@ class DetailRestoran : Fragment() {
             desc = getfilmfromfav.desc
         }
 
+        if (getUpdateMenu!=null){
+            view.text1.text = getUpdateMenu.namaMakanan
+            view.text2.text = getUpdateMenu.harga
+            view.text4.text = getUpdateMenu.desc
+            Glide.with(requireContext()).load(getUpdateMenu.gambar).into(view.gambar1)
+        }
+
         email = ""
         toggleFavorite = "false"
         alreadyFavorite = false
@@ -98,11 +108,21 @@ class DetailRestoran : Fragment() {
         view.btnfavorite.setOnClickListener {
             toggleButton()
         }
+        view.btnedit.setOnClickListener {
+            val bund = Bundle()
+            if (getfilm !=null && getUpdateMenu ==null){
+                bund.putParcelable("detailfilm", getfilm)
+            }
+            else if (getUpdateMenu!=null){
+                bund.putParcelable("updatemenu", getUpdateMenu)
+            }
 
+            view.findNavController().navigate(R.id.action_detailRestoran_to_editMenuRestoran,bund)
+        }
 
-
-
-
+        view.btnbackhome.setOnClickListener {
+            view.findNavController().navigate(R.id.action_detailRestoran_to_homeRestoran)
+        }
 
         return view
     }

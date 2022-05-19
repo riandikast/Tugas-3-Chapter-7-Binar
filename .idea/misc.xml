@@ -5,7 +5,8 @@
       <map>
         <entry key="..\:/AndroidProject/ListMakananUpdate/app/src/main/res/drawable-v24/rectangleedittext.xml" value="0.1" />
         <entry key="..\:/AndroidProject/ListMakananUpdate/app/src/main/res/layout/activity_main.xml" value="0.15081521739130435" />
-        <entry key="..\:/AndroidProject/ListMakananUpdate/app/src/main/res/layout/fragment_detail_restoran.xml" value="0.16" />
+        <entry key="..\:/AndroidProject/ListMakananUpdate/app/src/main/res/layout/fragment_detail_restoran.xml" value="0.264" />
+        <entry key="..\:/AndroidProject/ListMakananUpdate/app/src/main/res/layout/fragment_edit_menu_restoran.xml" value="0.1743659420289855" />
         <entry key="..\:/AndroidProject/ListMakananUpdate/app/src/main/res/layout/fragment_favorite.xml" value="0.15081521739130435" />
         <entry key="..\:/AndroidProject/ListMakananUpdate/app/src/main/res/layout/fragment_home_restoran.xml" value="0.15081521739130435" />
         <entry key="..\:/AndroidProject/ListMakananUpdate/app/src/main/res/layout/fragment_login_restoran.xml" value="0.15081521739130435" />
@@ -17,6 +18,7 @@
         <entry key="..\:/AndroidProject/ListMakananUpdate/app/src/main/res/layout/item_makanan.xml" value="0.16" />
         <entry key="..\:/AndroidProject/ListMakananUpdate/app/src/main/res/layout/logout_dialog.xml" value="0.18342391304347827" />
         <entry key="..\:/AndroidProject/ListMakananUpdate/app/src/main/res/menu/bottom_nav.xml" value="0.1921875" />
+        <entry key="..\:/AndroidProject/ListMakananUpdate/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.126" />
       </map>
     </option>
   </component>

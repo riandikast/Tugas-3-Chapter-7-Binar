@@ -10,6 +10,7 @@ import androidx.lifecycle.asLiveData
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.binar.challengechapterenam.datastore.UserManager
+import com.bumptech.glide.Glide
 import com.restoran.listmakanan.R
 import com.restoran.listmakanan.room.FavoriteDB
 import com.restoran.listmakanan.room.FavoriteMakanan
@@ -37,9 +38,14 @@ class FavoriteRestoran : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_favorite, container, false)
         db = FavoriteDB.getInstance(requireContext())
-
-        emailUser =""
         userManager = UserManager(requireContext())
+        userManager.userImage.asLiveData().observe(requireActivity()){
+            if (it !="x") {
+                Glide.with(requireContext()).load(it).into(view.profilefav)
+            }
+        }
+        emailUser =""
+
         userManager.userUsername.asLiveData().observe(requireActivity()){
             view.welcomefav.text = it.toString()
         }

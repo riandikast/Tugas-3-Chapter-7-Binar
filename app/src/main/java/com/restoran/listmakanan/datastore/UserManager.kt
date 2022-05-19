@@ -29,8 +29,6 @@ class UserManager (context : Context) {
             it[PASSWORD] = password
             it[USERNAME] = username
             it[EMAIL] = email
-
-
         }
     }
 

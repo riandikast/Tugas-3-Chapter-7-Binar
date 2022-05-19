@@ -26,8 +26,8 @@ class AdapterHome (private val onclick : (GetMenuItem)->Unit) : RecyclerView.Ada
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-//        Glide.with(holder.itemView.context).load(datafilm!![position].image).into(holder.itemView.gambar
-//        )
+        Glide.with(holder.itemView.context).load(datafilm!![position].gambar).into(holder.itemView.gambar
+        )
 
         holder.itemView.text1.text = datafilm!![position].namaMakanan
         holder.itemView.text2.text = datafilm!![position].harga

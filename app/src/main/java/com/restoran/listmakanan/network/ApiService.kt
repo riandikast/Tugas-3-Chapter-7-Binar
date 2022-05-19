@@ -4,6 +4,7 @@ package com.restoran.listmakanan.network
 
 import com.listfilm.andika.model.update.UpdateResponse
 import com.restoran.listmakanan.model.makanan.GetMenuItem
+import com.restoran.listmakanan.model.update.UpdateMenuResponse
 import com.restoran.listmakanan.model.user.GetUserItem
 import retrofit2.Call
 import retrofit2.http.*
@@ -31,6 +32,11 @@ interface ApiService {
     fun updateNewUser(
         @Body user : UpdateResponse, @Path("id") id : String
     ): Call<GetUserItem>
+
+    @PUT("menu-restoran/{id}")
+    fun updateMenu(
+        @Body menu : UpdateMenuResponse, @Path("id") id : String
+    ): Call<GetMenuItem>
 
 
 

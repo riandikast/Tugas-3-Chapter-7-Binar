@@ -81,6 +81,12 @@
         <action
             android:id="@+id/action_detailRestoran_to_favoriteRestoran"
             app:destination="@id/favoriteRestoran" />
+        <action
+            android:id="@+id/action_detailRestoran_to_editMenuRestoran"
+            app:destination="@id/editMenuRestoran" />
+        <action
+            android:id="@+id/action_detailRestoran_to_editMenuRestoran2"
+            app:destination="@id/editMenuRestoran" />
     </fragment>
     <fragment
         android:id="@+id/profileRestoran"
@@ -92,5 +98,13 @@
         <action
             android:id="@+id/action_profileRestoran_to_homeRestoran"
             app:destination="@id/homeRestoran" />
+    </fragment>
+    <fragment
+        android:id="@+id/editMenuRestoran"
+        android:name="com.restoran.listmakanan.view.fragment.EditMenuRestoran"
+        android:label="EditMenuRestoran" >
+        <action
+            android:id="@+id/action_editMenuRestoran_to_detailRestoran"
+            app:destination="@id/detailRestoran" />
     </fragment>
 </navigation>
